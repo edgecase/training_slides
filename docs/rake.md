@@ -89,3 +89,6 @@ Parts 2 & 3 combined:
 %code "labs/rake/Rakefile"
 
 %hideoff
+
+<hr>
+[back](index.html)

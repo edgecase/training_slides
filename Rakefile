@@ -1,8 +1,8 @@
 #!/usr/bin/ruby -wKU
 
 require 'rake/clean'
-require 'bluecloth'
 require './lib/file_includer'
+require 'bluecloth'
 
 DOC_FILES = FileList['docs/*.md']
 HTML_FILES = DOC_FILES.pathmap("html/%n.html")
