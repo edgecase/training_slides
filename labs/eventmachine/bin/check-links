@@ -2,7 +2,6 @@
 
 require 'optparse'
 require 'check_links'
-require 'eventmachine'
 
 class LogWrapper
   def initialize(method, obj)
@@ -61,10 +60,7 @@ def main(args)
   parser  = LogWrapper.new(:parse, parser) if options[:logging] > 1
 
   link_checker = CheckLinks::LinkChecker.new(fetcher: fetcher, parser: parser)
-
-  EventMachine.run do
-    link_checker.check(urls.first, options[:prefix])
-  end
+  link_checker.check(urls.first, options[:prefix])
 
   if link_checker.bad_urls.empty?
     puts "No bad URLs"

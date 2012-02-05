@@ -1,3 +1,5 @@
+require 'eventmachine'
+
 module CheckLinks
   class LinkChecker
     attr_reader :good_urls, :bad_urls
@@ -11,14 +13,19 @@ module CheckLinks
       @prefix = nil
     end
 
+    # %+ runloop
     def check(url, prefix=nil)
       prefix ||= url
       @prefix = Regexp.new("^" + Regexp.quote(prefix))
-      check_url(url)
+      EventMachine.run do
+        check_url(url)
+      end
     end
+    # %-
 
     private
 
+    # %+ checkurl
     def check_url(url)
       return if seen?(url)
       mark_seen(url)
@@ -32,13 +39,10 @@ module CheckLinks
             check_urls(new_urls)
           end
         end
-        stop unless @fetcher.busy?
+        EventMachine.stop unless @fetcher.busy?
       end
     end
-
-    def stop
-      EventMachine.stop
-    end
+    # %-
 
     def check_urls(urls)
       urls.each do |url| check_url(url) end

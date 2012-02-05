@@ -17,13 +17,6 @@ describe CheckLinks::LinkChecker do
   describe "running the checker" do
     Given(:root_url) { "http://xyz.com/" }
     Given(:prefix) { nil }
-
-    Given {
-      def checker.stop
-        nil
-      end
-    }
-
     Given { checker.check(root_url, prefix) }
 
     context "with no links on the initial page" do
