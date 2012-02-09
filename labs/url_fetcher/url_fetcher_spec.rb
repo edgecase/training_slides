@@ -1,7 +1,12 @@
-require 'spec_helper'
+# gem install rspec-given
+
+require 'rspec/given'
+require './url_fetcher'
+
 
 describe UrlFetcher do
   Given(:fetcher) { UrlFetcher.new }
+
   context "with good url" do
     Then { fetcher.fetch("http://onestepback.org").should =~ /<html/i }
   end
