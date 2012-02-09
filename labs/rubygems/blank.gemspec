@@ -2,11 +2,9 @@ require 'rake'
 
 PKG_FILES = "Where are my files?"
 
-CURRENT_VERSION = ''
-
 Gem::Specification.new do |s|
   s.name              = ""
-  s.version           = 
+  s.version           = "Instead of typing it, how about a constant" 
   s.date              = Time.now.strftime('%Y-%m-%d')
   s.summary           = ""
   s.homepage          = ""
