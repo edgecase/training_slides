@@ -43,6 +43,7 @@ Now test to ensure your binary works:
 #### Extra Information
 
 Naming can be hard. When do you use a dash, when an underscore. Here are some hints on naming your gem:
+
 * If it's a compound name use an underscore (example: 'url_fetcher)
 * If it is a plugin for another gem use a dash in the name and a slash in the require (example: 'rspec-given' name and 'require 'rspec/given' in the file)
 
