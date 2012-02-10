@@ -68,4 +68,4 @@ def main(args)
   end
 end
 
-main(ARGV) if $0 == __FILE__
+main(ARGV)
