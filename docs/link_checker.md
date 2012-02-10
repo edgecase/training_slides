@@ -274,5 +274,34 @@ Here is the complete source code for the check-links file.
 
 %hideoff
 
+### Alternative Lab -- Single Page Fetcher
+
+This is a simplified version of the link checker lab.  Instead of
+recursive finding *all* the links on the referenced pages, only check
+the links on the urls named on the command line.
+
+For example, the command:
+
+    check-links http://onestepback.org http://google.com http://www.ruby-lang.org
+
+will only check the links on the three pages listed.  There is no need
+to use <code>optparse</code> to handle prefixes.
+
+Output should be something like this:
+
+    $ check-links http://onestepback.org http://google.com http://www.ruby-lang.org
+    Page http://onestepback.org
+    Bad URLs:
+      http://bad-url
+
+    Page http://google.com
+    No bad URLs
+
+    Page http://www.ruby-lang.org
+    Bad URLs:
+      http://bad-url
+      http://another-bad-url
+
 <hr>
 [back](index.html)
+
