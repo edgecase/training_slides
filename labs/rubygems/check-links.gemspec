@@ -2,7 +2,7 @@ require 'rake'
 
 PKG_FILES = FileList[
   'lib/**/*.rb',
-  'test/**/*.rb',
+  'spec/**/*.rb',
 	'Rakefile',
 	'Gemfile',
 	'bin/check-links'
@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency('nokogiri')
 
-  s.executables       = %w( check-links )
+  s.executables       = "check-links"
 
   s.description       = <<desc
   A much more elequent and long description of the link 
